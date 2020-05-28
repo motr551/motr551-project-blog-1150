@@ -1,6 +1,10 @@
 console.log('app.js')
+require('dotenv').config();
 
+
+require('./config/mongo');
 const express = require('express');
+
 // require('dotenv').config();
 // const PORT = process.env.PORT;
 const routes = require('./routes');
@@ -10,7 +14,7 @@ const cors = require('cors');
 
 const app = express();
 
-require('./config/mongo');
+// require('./config/mongo');
 
 app.use(cors());
 app.use(express.json());
@@ -18,8 +22,8 @@ app.use(express.urlencoded({ extended: true, }));
 
 // TEST ONLY: check GET / HTTP method works
 app.get('/',(req, res)=>{
-	res.json({
-		"Test response to app.get('/'... in app.js ": "Hello 1150 is a new rest api project"
+	res.json({ "message":
+		"Test response to app.get('/'... in app.js Hello 1150 is a new rest api project"
 	})
 });
 
