@@ -18,10 +18,11 @@ console.log('./config/mongo.js')
 
 // console.log(process.env.MONGODB_URI)
 
+const MONGODB_URI = require("../app.js");
 
 const mongoose = require('mongoose');
-const mongoDB = process.env.MONGODB_URI;
-console.log(mongoDB)
+const mongoDB = MONGODB_URI;
+//console.log(mongoDB)
 
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, });
