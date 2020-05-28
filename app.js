@@ -2,34 +2,40 @@ console.log('app.js')
 
 
 //require('dotenv').config();
+
+
 // Hide secret data with nconf
-var nconf = require('nconf');
+// var nconf = require('nconf');
  
-nconf.argv().env().file({ file: './project-blog-1150/config.json' });
+// nconf.argv().env().file({ file: './project-blog-1150/config.json' });
 
-const DB_USER = nconf.get("DB_USER");
-const DB_PASSWORD = nconf.get("DB_PASSWORD");
-const APP = nconf.get("DB_PASSWORD");
-const STR1 = nconf.get("MONGODB_STR1");
-const STR2 = nconf.get("MONGODB_STR2")
-const STR3 = nconf.get("MONGODB_STR3")
-const PORT = nconf.get("PORT");
-const JWT_KEY = nconf.get("JWT_KEY");
+// const DB_USER = nconf.get("DB_USER");
+// const DB_PASSWORD = nconf.get("DB_PASSWORD");
+// const APP = nconf.get("DB_PASSWORD");
+// const STR1 = nconf.get("MONGODB_STR1");
+// const STR2 = nconf.get("MONGODB_STR2")
+// const STR3 = nconf.get("MONGODB_STR3")
+// const PORT = nconf.get("PORT");
+// const JWT_KEY = nconf.get("JWT_KEY");
 
 
-const MONGODB_URI = 
-	STR1+ 
-	DB_USER+ ":" +
-	DB_PASSWORD +
-	STR2 +
-	APP +
-	STR3
-;
+// const MONGODB_URI = 
+// 	STR1+ 
+// 	DB_USER+ ":" +
+// 	DB_PASSWORD +
+// 	STR2 +
+// 	APP +
+// 	STR3
+// ;
 
-module.exports = MONGODB_URI;
+//module.exports = MONGODB_URI;
 
-console.log("PORT: "+ PORT)
-console.log("MONGODB_URI: "+ MONGODB_URI)
+const {PORT} = require("./config/envconf.js")
+const {MONGODB_URI} = require("./config/envconf.js")
+
+
+console.log("PORT: "+ process.env.PORT)
+console.log("MONGODB_URI: "+ process.env.MONGODB_URI)
 
 require('./config/mongo');
 const express = require('express');

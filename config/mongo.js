@@ -18,10 +18,12 @@ console.log('./config/mongo.js')
 
 // console.log(process.env.MONGODB_URI)
 
-const MONGODB_URI = require("../app.js");
+//const MONGODB_URI = require("../app.js");
+//var nconf = require('nconf');
 
+const mongoDB = process.env.MONGODB_URI;
 const mongoose = require('mongoose');
-const mongoDB = MONGODB_URI;
+//const mongoDB = nconf.get("MONGODB_URI")
 //console.log(mongoDB)
 
 
