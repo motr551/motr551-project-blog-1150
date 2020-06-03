@@ -34,8 +34,8 @@ const {PORT} = require("./config/envconf.js")
 const {MONGODB_URI} = require("./config/envconf.js")
 
 
-console.log("PORT: "+ process.env.PORT)
-console.log("MONGODB_URI: "+ process.env.MONGODB_URI)
+// console.log("PORT: "+ process.env.PORT)
+// console.log("MONGODB_URI: "+ process.env.MONGODB_URI)
 
 require('./config/mongo');
 const express = require('express');
