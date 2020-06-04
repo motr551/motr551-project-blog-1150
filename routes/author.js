@@ -206,6 +206,7 @@ router.post("/login", (req, res, next)=>{
 			}
 			jwt.sign({ author, }, process.env
 			.JWT_SECRET_KEY, { expiresIn: '3d' }, function (err, token) {
+				console.log("token: "+token )
 				res.json({
 					"NewTokenIssued": "Save taken in local file",
 					
